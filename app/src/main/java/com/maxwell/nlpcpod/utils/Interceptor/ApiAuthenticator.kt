@@ -1,4 +1,4 @@
-package com.maxwell.nlpcpod.Interceptor
+package com.maxwell.nlpcpod.utils.Interceptor
 
 import com.maxwell.nlpcpod.domain.use_case.auth.ReadAccessToken
 import dagger.Lazy

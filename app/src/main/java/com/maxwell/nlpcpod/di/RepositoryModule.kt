@@ -2,8 +2,10 @@ package com.maxwell.nlpcpod.di
 
 import com.maxwell.nlpcpod.data.manager.ManagerImpl
 import com.maxwell.nlpcpod.data.repository.AuthRepositoryImpl
+import com.maxwell.nlpcpod.data.repository.PodcastRepositoryImpl
 import com.maxwell.nlpcpod.domain.manager.TokenManager
 import com.maxwell.nlpcpod.domain.repository.AuthRepository
+import com.maxwell.nlpcpod.domain.repository.PodcastRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -22,5 +24,8 @@ abstract class RepositoryModule {
     @Singleton
     abstract fun bindPreference(managerImpl: ManagerImpl):TokenManager
 
+    @Binds
+    @Singleton
+    abstract fun bindPodcastRepository(podcastRepositoryImpl: PodcastRepositoryImpl):PodcastRepository
 
 }

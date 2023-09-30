@@ -1,14 +1,12 @@
 package com.maxwell.nlpcpod.domain.model
 
-data class Series(
+data class Category(
     val __v: Int,
     val _id: String,
-    val categoryId: String,
     val createdAt: String,
-    val createdBy: CreatedBy,
-    val speaker: String,
+    val createdBy: String,
+    val name: String,
     val status: String,
     val thumbnail: String,
-    val title: String,
     val updatedAt: String
 )
