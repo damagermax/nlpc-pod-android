@@ -3,6 +3,8 @@ package com.maxwell.nlpcpod.di
 import com.maxwell.nlpcpod.utils.Interceptor.ApiAuthenticator
 import com.maxwell.nlpcpod.data.remote.AuthApi
 import com.maxwell.nlpcpod.data.remote.PodcastApi
+import com.maxwell.nlpcpod.data.repository.AuthRepositoryImpl
+import com.maxwell.nlpcpod.data.repository.PodcastRepositoryImpl
 import com.maxwell.nlpcpod.utils.Constant.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -41,7 +43,16 @@ class ApiModule {
 
     @Provides
     @Singleton
+    fun provideAuthRepository(authApi: AuthApi) = AuthRepositoryImpl(authApi)
+
+    @Provides
+    @Singleton
     fun providePodcastApi(retrofit: Retrofit): PodcastApi = retrofit.create(PodcastApi::class.java)
+
+
+    @Provides
+    @Singleton
+    fun providePodcastRepository(podcastApi: PodcastApi) = PodcastRepositoryImpl(podcastApi)
 
 
 }

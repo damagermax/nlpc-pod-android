@@ -123,6 +123,9 @@ dependencies {
 
     //lottie
     implementation("com.airbnb.android:lottie-compose:6.0.1")
+
+    // pretty time
+    implementation ("org.ocpsoft.prettytime:prettytime:5.0.4.Final")
 }
 
 

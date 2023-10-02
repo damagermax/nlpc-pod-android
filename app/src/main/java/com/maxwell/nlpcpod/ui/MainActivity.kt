@@ -91,7 +91,7 @@ fun BottomBar(currentDestination: NavDestination?, navController: NavHostControl
     }
 
     when (currentDestination?.route) {
-        Screens.Browse.route, Screens.Search.route -> {
+        Screens.Browse.route, Screens.Search.route,Screens.SeriesDetail.route -> {
             bottomBarState.value = true
         }
 

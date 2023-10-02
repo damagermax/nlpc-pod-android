@@ -22,6 +22,8 @@ sealed class Screens(val route: String, val title: String? = null, val icon: Ima
     object Search : Screens(route = "search", title = "Search", icon = Icons.Filled.Search)
     object Settings : Screens(route = "setting", title = "Settings", icon = Icons.Filled.Settings)
 
+    object SeriesDetail:Screens(route = "series-detail")
+
 }
 
 

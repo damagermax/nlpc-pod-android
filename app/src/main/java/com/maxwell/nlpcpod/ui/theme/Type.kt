@@ -76,7 +76,7 @@ val Typography  = Typography(
     ),
     titleLarge = TextStyle(
         fontFamily = Montserrat,
-        fontSize = 18.sp,
+        fontSize = 16.sp,
         fontWeight = FontWeight.Medium,
         lineHeight = 20.sp,
         letterSpacing = 0.5.sp
@@ -112,7 +112,7 @@ val Typography  = Typography(
     labelMedium = TextStyle(
         fontFamily = Montserrat,
         fontSize = 12.sp,
-        fontWeight = FontWeight.SemiBold,
+        fontWeight = FontWeight.Normal,
         lineHeight = 16.sp,
         letterSpacing = 0.sp
     ),

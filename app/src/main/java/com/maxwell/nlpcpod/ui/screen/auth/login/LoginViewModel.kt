@@ -16,6 +16,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
+
+
+
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val login: Login,
@@ -23,9 +26,10 @@ class LoginViewModel @Inject constructor(
     private val readAccessToken: ReadAccessToken,
     private val loginFormValidation: LoginFormValidation,
 
-) : ViewModel() {
+    ) : ViewModel() {
 
     val tag = LoginViewModel::class.java.simpleName
+
     var state by mutableStateOf(LoginState())
         private set
 
@@ -57,8 +61,8 @@ class LoginViewModel @Inject constructor(
 
         viewModelScope.launch {
             login(user).collectLatest { response ->
-                 Log.d(tag, response.toString())
-                response.data?.token?.let { token->saveAccessToken(token)}
+                Log.d(tag, response.toString())
+                response.data?.token?.let { token -> saveAccessToken(token) }
 
                 state = state.copy(loginResponse = response)
             }

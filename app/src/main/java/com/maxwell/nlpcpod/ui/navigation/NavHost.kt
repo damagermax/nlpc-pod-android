@@ -13,21 +13,26 @@ import com.maxwell.nlpcpod.ui.screen.auth.login.LoginScreen
 import com.maxwell.nlpcpod.ui.screen.auth.signup.SignupScreen
 import com.maxwell.nlpcpod.ui.screen.browse.BrowseScreen
 import com.maxwell.nlpcpod.ui.screen.search.SearchScreen
+import com.maxwell.nlpcpod.ui.screen.series_detail.SeriesDetail
 
 @Composable
 fun Navigation(paddingValues: PaddingValues, navController: NavHostController) {
 
-    NavHost(modifier = Modifier.padding(paddingValues),navController = navController, startDestination = Screens.AuthNavigation.route) {
+    NavHost(
+        modifier = Modifier.padding(paddingValues), navController = navController, startDestination = Screens.HomeNavigation
+            .route
+    ) {
 
         navigation(startDestination = Screens.Login.route, route = Screens.AuthNavigation.route) {
-            composable(route = Screens.Login.route) {LoginScreen(navController) }
+            composable(route = Screens.Login.route) { LoginScreen(navController) }
             composable(route = Screens.Register.route) { SignupScreen(navController) }
-            composable(route = Screens.ForgotPassword.route){ ForgotPassword(navController)}
+            composable(route = Screens.ForgotPassword.route) { ForgotPassword(navController) }
         }
 
         navigation(startDestination = Screens.Browse.route, route = Screens.HomeNavigation.route) {
-            composable(route = Screens.Browse.route) { BrowseScreen() }
+            composable(route = Screens.Browse.route) { BrowseScreen( navigation = navController) }
             composable(route = Screens.Search.route) { SearchScreen() }
+            composable(route=Screens.SeriesDetail.route){ SeriesDetail()}
         }
     }
 
