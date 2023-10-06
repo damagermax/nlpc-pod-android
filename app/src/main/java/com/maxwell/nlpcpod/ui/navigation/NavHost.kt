@@ -5,21 +5,25 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
+import androidx.navigation.navArgument
 import com.maxwell.nlpcpod.ui.screen.auth.forgotpassword.ForgotPassword
 import com.maxwell.nlpcpod.ui.screen.auth.login.LoginScreen
 import com.maxwell.nlpcpod.ui.screen.auth.signup.SignupScreen
 import com.maxwell.nlpcpod.ui.screen.browse.BrowseScreen
 import com.maxwell.nlpcpod.ui.screen.search.SearchScreen
-import com.maxwell.nlpcpod.ui.screen.series_detail.SeriesDetail
+import com.maxwell.nlpcpod.ui.screen.series_detail.SeriesDetailScreen
 
 @Composable
 fun Navigation(paddingValues: PaddingValues, navController: NavHostController) {
 
     NavHost(
-        modifier = Modifier.padding(paddingValues), navController = navController, startDestination = Screens.HomeNavigation
+        modifier = Modifier.padding(paddingValues),
+        navController = navController,
+        startDestination = Screens.HomeNavigation
             .route
     ) {
 
@@ -30,9 +34,11 @@ fun Navigation(paddingValues: PaddingValues, navController: NavHostController) {
         }
 
         navigation(startDestination = Screens.Browse.route, route = Screens.HomeNavigation.route) {
-            composable(route = Screens.Browse.route) { BrowseScreen( navigation = navController) }
+            composable(route = Screens.Browse.route) { BrowseScreen(navigation = navController) }
             composable(route = Screens.Search.route) { SearchScreen() }
-            composable(route=Screens.SeriesDetail.route){ SeriesDetail()}
+
+            composable(route = Screens.SeriesDetail.route,) {
+                SeriesDetailScreen() }
         }
     }
 

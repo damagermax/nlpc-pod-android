@@ -24,8 +24,8 @@ import com.maxwell.nlpcpod.utils.extensions.formatDate
 @Composable
 fun SeriesItem(onClick: () -> Unit, series: Series) {
 
-
-    Column(modifier = Modifier.fillMaxWidth().height(100.dp).clickable { onClick() }, verticalArrangement = Arrangement.Center) {
+    Column(modifier = Modifier.fillMaxWidth().height(100.dp).clickable { onClick() },
+        verticalArrangement = Arrangement.Center) {
 
         Row(modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)) {
             ImageView(imageUrl = series.thumbnail, description = series.title, modifier = Modifier.size(70.dp))
@@ -39,7 +39,7 @@ fun SeriesItem(onClick: () -> Unit, series: Series) {
                 )
                 //Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "${series.createdAt.formatDate()}",
+                    text = "${series.createdAt.formatDate()} - ${series.episodeCount} Episodes",
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     style = MaterialTheme.typography.labelLarge,

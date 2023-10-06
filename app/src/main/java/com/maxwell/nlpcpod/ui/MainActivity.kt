@@ -91,32 +91,32 @@ fun BottomBar(currentDestination: NavDestination?, navController: NavHostControl
     }
 
     when (currentDestination?.route) {
-        Screens.Browse.route, Screens.Search.route,Screens.SeriesDetail.route -> {
+        Screens.Browse.route, Screens.Search.route, Screens.SeriesDetail.route -> {
             bottomBarState.value = true
         }
 
         else -> bottomBarState.value = false
     }
+
     AnimatedVisibility(visible = bottomBarState.value) {
 
         Column {
-            Divider()
             BottomNavigation(
                 backgroundColor = Color.Black,
-               contentColor = Red600
-               ) {
+                contentColor = Red600
+            ) {
 
                 navItems.forEach { screens ->
                     BottomNavigationItem(
                         icon = { Icon(screens.icon!!, contentDescription = null) },
                         selectedContentColor = Red600,
                         alwaysShowLabel = false,
-                       unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled),
+                        unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled),
                         label = {
                             Text(
                                 text = screens.title!!,
-                                style = MaterialTheme.typography.labelSmall
-                                , fontWeight = FontWeight.Light
+                                style = MaterialTheme.typography.labelSmall,
+                                fontWeight = FontWeight.Light
                             )
                         },
                         selected = currentDestination?.route == screens.route,

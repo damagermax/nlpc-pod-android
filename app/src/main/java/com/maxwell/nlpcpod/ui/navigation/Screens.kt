@@ -18,11 +18,14 @@ sealed class Screens(val route: String, val title: String? = null, val icon: Ima
 
     object HomeNavigation : Screens(route = "home-navigation")
     object Home : Screens(route = "home")
-    object Browse : Screens(route = "browse", title = "Browse",icon = Icons.Filled.Home)
+    object Browse : Screens(route = "browse", title = "Browse", icon = Icons.Filled.Home)
     object Search : Screens(route = "search", title = "Search", icon = Icons.Filled.Search)
     object Settings : Screens(route = "setting", title = "Settings", icon = Icons.Filled.Settings)
 
-    object SeriesDetail:Screens(route = "series-detail")
+    object SeriesDetail : Screens(route = "series-detail/{series}"){
+        fun data(seriesJson:String)="series-detail/$seriesJson"
+    }
+
 
 }
 

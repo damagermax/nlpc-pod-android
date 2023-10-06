@@ -89,6 +89,8 @@ dependencies {
     //Retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
+
 
     //Coil
     implementation("io.coil-kt:coil-compose:2.4.0")
@@ -126,6 +128,11 @@ dependencies {
 
     // pretty time
     implementation ("org.ocpsoft.prettytime:prettytime:5.0.4.Final")
+
+    // palette
+    implementation ("androidx.palette:palette:1.0.0")
+
+
 }
 
 

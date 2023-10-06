@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,10 +18,10 @@ import com.maxwell.nlpcpod.ui.theme.Red600
 
 /**
  * @param onClick for performing action
- *@param content for passing a custom content
- *@param label the text of the button
+ * @param content for passing a custom content
+ * @param label the text of the button
  *
- *Only one these params can be use at a time
+ * Only one these params can be use at a time
  * */
 @Composable
 fun ContainedButton(
@@ -43,3 +44,4 @@ fun ContainedButton(
         content?.let { content.invoke(this) }
     }
 }
+

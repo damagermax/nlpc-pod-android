@@ -7,7 +7,6 @@ import com.maxwell.nlpcpod.domain.repository.GetSeriesResponse
 import com.maxwell.nlpcpod.domain.repository.PodcastRepository
 import com.maxwell.nlpcpod.utils.Resource
 import kotlinx.coroutines.flow.flow
-import javax.inject.Inject
 
 class PodcastRepositoryImpl(private val podcastApi: PodcastApi) : PodcastRepository, BaseRepository() {
     override suspend fun getCategories(): GetCategoriesResponse = flow {
@@ -22,9 +21,9 @@ class PodcastRepositoryImpl(private val podcastApi: PodcastApi) : PodcastReposit
         emit(response)
     }
 
-    override suspend fun getSeries(categoryId: String): GetSeriesResponse = flow {
+    override suspend fun getCategorySeries(categoryId: String): GetSeriesResponse = flow {
         emit(Resource.Loading())
-        val response = handleResponse(podcastApi.getSeries(categoryId))
+        val response = handleResponse(podcastApi.getCategorySeries(categoryId))
         emit(response)
     }
 

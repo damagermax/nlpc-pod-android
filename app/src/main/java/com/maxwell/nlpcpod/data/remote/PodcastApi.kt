@@ -1,6 +1,7 @@
 package com.maxwell.nlpcpod.data.remote
 
 import com.maxwell.nlpcpod.data.remote.dto.CategoryResponse
+import com.maxwell.nlpcpod.data.remote.dto.EpisodeResponse
 import com.maxwell.nlpcpod.data.remote.dto.SeriesResponse
 import com.maxwell.nlpcpod.utils.Constant.ALL_SERIES
 import com.maxwell.nlpcpod.utils.Constant.CATEGORIES
@@ -21,8 +22,8 @@ interface PodcastApi {
     suspend fun getAllSeries():Response<SeriesResponse>
 
     @GET(CATEGORIES_SERIES)
-    suspend fun getSeries(@Path(CATEGORY_ID) categoryId:String):Response<SeriesResponse>
+    suspend fun getCategorySeries(@Path(CATEGORY_ID) categoryId:String):Response<SeriesResponse>
 
     @GET(SERIES_EPISODES)
-    suspend fun getEpisodes(@Path(SERIES_ID) seriesId:String):Response<CategoryResponse>
+    suspend fun getEpisodes(@Path(SERIES_ID) seriesId:String):Response<EpisodeResponse>
 }

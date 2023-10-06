@@ -10,13 +10,13 @@ import coil.compose.AsyncImage
 
 @Composable
 fun ImageView(
-    imageUrl:String,
+    imageUrl:String?,
     description:String,
     scale:ContentScale=ContentScale.Crop,
     modifier:Modifier=Modifier
 ) {
     AsyncImage(
-        model =imageUrl ,
+        model =imageUrl?:"" ,
         contentDescription = description,
         contentScale = scale,
         modifier = modifier.clip(MaterialTheme.shapes.small),
